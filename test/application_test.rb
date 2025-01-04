@@ -18,4 +18,9 @@ class RulersAppTest < Minitest::Test
     body = last_response.body
     assert body["Hello"]
   end
+
+  def test_status
+    get "/"
+    assert_equal 200, last_response.status 
+  end
 end
